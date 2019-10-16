@@ -1,5 +1,5 @@
 FROM php:7.0.19-apache
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql mysqli
 RUN apt-get update
 RUN apt-get install --no-install-recommends --assume-yes --quiet ca-certificates curl git
 RUN rm -rf /var/lib/apt/lists/*
