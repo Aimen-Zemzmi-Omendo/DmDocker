@@ -11,9 +11,9 @@ services:
     image: php:7.2-apache
     build: .
     volumes:
-     - ./dm/:/var/www/html
+     - ./pa/:/var/www/html
     ports:
-     - 8081:80
+     - "8081:80"
     depends_on:
     - mariadb
     
@@ -22,7 +22,7 @@ services:
     environment:
       - PMA_HOST=mariadb
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
      - ./dm/:/var/www/html
     depends_on:
@@ -31,8 +31,8 @@ services:
   mailhog:
     image: mailhog/mailhog
     ports: 
-      - 1025:1025
-      - 8025:8025
+      - "1025:1025"
+      - "8025:8025"
     environment:
      - MH_STORAGE=maildir
     depends_on:
